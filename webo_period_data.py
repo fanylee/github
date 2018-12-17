@@ -13,15 +13,12 @@ def start_chrome():
 
 
 def q(st, et):
-    return
-
-
-f''
+    return f'?is_text=1&is_pic=1&key_word=&start_time=2017-12-17&end_time=2018-12-17&is_search=1&is_searchadv=1#_0'
 
 
 def scroll_down():
     html_page = driver.find_element_by_tag_name('html')
-    for i in range(15):
+    for i in range(5):
         print(i)
         html_page.send_keys(Keys.END)
         time.sleep(0.9)
@@ -34,8 +31,8 @@ def find_cards_info():
 
     for card in cards:
         content_sel = 'div.WB_text.W_f14'
-        time_sel = 'div.WB_from.W_txt2'
-        link_sel = 'div.WB_from.W_txt2 > a:nth-child(1)'
+        time_sel = 'div.WB_from.S_txt2'
+        link_sel = 'div.WB_from.S_txt2 > a:nth-child(1)'
 
         content = card.find_element_by_css_selector(content_sel).text
         time = card.find_element_by_css_selector(time_sel).text
@@ -64,7 +61,7 @@ def save(info_list, name):
     else:
         with open(full_path, 'w+') as f:
             writer = csv.writer(f)
-            writer.writerows(info_list)
+           # writer.writerows(info_list)
             print('Done')
 
 
@@ -86,7 +83,7 @@ def run_crawler(base, duration):
         run_crawler(next_page, duration)
 
 
-base = ''
+base = 'https://weibo.com/5767028504/profile?rightmod=1&wvr=6&mod=personinfo'
 driver = start_chrome()
 input()
-run_crawler(base, '')
+run_crawler(base, '2017-12-17~2018-12-17')
