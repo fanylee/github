@@ -10,7 +10,7 @@ def start_chrome():
 
 def find_strangers():
     # btn
-    btn_sel = 'div.ContentItem-extra > button.Button--blue'
+    btn_sel = '#Pl_Official_RelationFans__90 > div > div > div > div.follow_box > div.follow_inner > ul > li:nth-child(5) > dl > dd.opt_box > span > a:nth-child(1)'
     elems = driver.find_elements_by_css_selector(btn_sel)
     return elems
 
@@ -18,26 +18,21 @@ def find_strangers():
 def add_fren():
     pass
 
-
-def push():
-    pass
-
-
-while True:
-    url = ''
-    follow_url = ''
-    driver = start_chrome()
-    driver.get(url)
-    if not driver.get_cookie():
-        push()
-    time.sleep(20)  # waitin login
+url = 'https://weibo.com/'
+follow_url = 'https://weibo.com/5767028504/fans?from=100505&wvr=6&mod=headfans&current=fans#place'
+driver = start_chrome()
+driver.get(url)
+if not driver.get_cookies():
+#    push()
+    time.sleep(20)
 
 driver.get(follow_url)
 time.sleep(6)
 strangers = find_strangers()
-for s in strangers:
-    s.click()
-    time.sleep(3)
+strangers[0].click()
+# for s in strangers:
+# s.click()
+time.sleep(3)
 
 print('Done')
 time.sleep(3000)
