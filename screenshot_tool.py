@@ -25,7 +25,7 @@ def make_app():
 
 
 def ui_getdata():
-    f_names = askoopenfilenames()
+    f_names = askopenfilenames()
     lbox = app.children['lbox']
     info['path'] = f_names
     if info['path']:
