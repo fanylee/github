@@ -22,9 +22,9 @@ def make_app():
 
 
 def speed_test():
-    s1 = psutil.net_io_counters(pernic=True)['en0']
+    s1 = psutil.net_io_counters(pernic=True)['eth0']
     time.sleep(1)
-    s2 = psutil.net_io_counters(pernic=True)['en0']
+    s2 = psutil.net_io_counters(pernic=True)['eth0']
     result = s2.bytes_recv - s1.bytes_recv
     return str(result / 1024) + 'kb/s'
 
