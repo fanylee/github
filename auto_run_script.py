@@ -6,13 +6,22 @@ import os
 
 def make_app():
     app = Tk()
-    Listbox(name='listb').pack()
-    Button(text='run', command=run_script).pack()
+    Label(app, text='Available script for run', font=('Hack', 20, 'bold')).pack()
+    Listbox(app, name='listb', bg='#FFF68F',fg='Aquamarine').pack(fill=BOTH, expand=True)
+    # Listbox(name='listb').pack()
+    Button(text='start', command=run_script).pack()
     Button(text='stop', command=stop_script).pack()
+    app.geometry('400x400')
     return app
 
 
 def ui_make_list():
+    listb = app.children['listb']
+    for d in os.listdir():
+        listb.insert(END, d)
+
+
+def run_script():
     listb = app.children['listb']
     s_path = listb.get(ACTIVE)
     p = multiprocessing.Process(name='print', target=run_path, args=(s_path,))
