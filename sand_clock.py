@@ -13,7 +13,7 @@ flag = [False]
 def make_app():
     _font = ['Arial', 25, 'bold']
     app = Tk()
-    Label(name='lb', text=0, font=_font).pack()
+    Label(name='lb', text='sand clock', fg='yellow', bg='blue', font=_font).pack()
     Button(name='btn', text='start', command=time_counts).pack()
     Entry(name='ips').pack()
     Button(name='bts', text='reset', command=time_reset).pack()
