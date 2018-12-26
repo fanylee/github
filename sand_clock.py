@@ -18,6 +18,7 @@ def make_app():
     Button(name='bts', text='reset', command=time_reset).pack()
     Entry(name='ipt').pack()
     Button(name='btp', text='pause', command=time_pause).pack()
+    Entry(name='ipp').pack()
     app.geometry('300x300')
     return app
 
@@ -43,8 +44,9 @@ def time_reset():
 
 
 def time_pause():
-    flag[0] = True
-
+    ipt = app.children['ipt']
+    if not ipt.get():
+        flag[0] = True
 
 def ui_watcher():
     def _update_button():
