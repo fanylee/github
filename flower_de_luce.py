@@ -5,11 +5,11 @@ import numpy as np
 
 import ai_utils
 
-DATA_FILE = './2017-12-17~2018-12-17.csv'
+DATA_FILE = './data_ai/Iris.csv'
 
-SPECIES = ['lris-setosa',
-           'lris-versicolor',
-           'lris-virginica'
+SPECIES = ['Iris-setosa',
+           'Iris-versicolor',
+           'Iris-virginica'
            ]
 
 FEAT_COLS = ['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']
