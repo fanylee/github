@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from scipy.spatial.distance import euclidean #
+from scipy.spatial.distance import euclidean
 import numpy as np
 
 import ai_utils
