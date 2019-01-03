@@ -42,8 +42,8 @@ def main():
 
         acc = best_model.score(X_test, y_test)
 
-        print('{}model predict accuracy:{:.2f}%'.format(model_name,acc*100))
-        print('{}model most suitable params:{}'.format(model_name,clf.best_params_))
+        print('{} model predict accuracy:{:.2f}%'.format(model_name,acc*100))
+        print('{} model most suitable params:{}'.format(model_name,clf.best_params_))
 
 if __name__ == '__main__':
     main()
