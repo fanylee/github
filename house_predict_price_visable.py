@@ -13,9 +13,9 @@ def plot_fitting_line(linear_reg_model, X, y, feat):
     b = linear_reg_model.intercept_
 
     plt.figure()
-    plt.scatter(X, y, alpha=0.5)
+    plt.scatter(X, y, alpha=0.5)#alpha 透明度
 
-    plt.plot(X, w * X + b, c='red')
+    plt.plot(X, w * X + b, c='red')#c color
     plt.title(feat)
     plt.show()
 
